@@ -1,0 +1,9 @@
+
+.head, h3{
+    text-align: center;
+}
+
+.button-center {
+    display: flex;
+    justify-content: center;
+}
