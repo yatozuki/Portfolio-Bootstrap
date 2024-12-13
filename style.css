@@ -1,3 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    font-family: "san-serif";
+
+}
+
 h1, h2 {
     font-family: "DM Serif Text";
 }
@@ -7,20 +16,29 @@ h3, p {
     font-size: 1.2rem;
 }
 
-.head, h3{
+.head, h3 {
     text-align: center;
 }
 
-.nav-link:hover {
-    background-color: rgb(13, 118, 255);
-    border-radius: 10%;
+/* NAVIGATION SECTION */
+#flexSwitchCheckDefault {
+    transform: scale(1.5);
 }
+
+.nav-item:hover {
+    display: flex;
+    background-color: rgb(13, 118, 255);
+    border-radius: 1rem;
+}
+
+/* TITLE SECTION */
 #hero {
     padding-top: 3.5rem;
 }
+
 .title-video {
     position: relative;
-    overflow: hidden; /* Ensure the video stays within the .title section */
+    overflow: hidden;
 }
 
 .back-video {
@@ -29,16 +47,22 @@ h3, p {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures proper scaling */
-    z-index: -1; /* Places the video behind the text */
-    pointer-events: none; /* Prevents interactions with the video */
+    -webkit-object-fit: cover;
+    -moz-object-fit: cover;
+    -ms-object-fit: cover;
+    object-fit: cover;
+    background-size: cover;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .title {
     margin: 2rem 0;
     text-shadow: 2px 2px #000;
+    color: #fff;
 }
 
+/* ABOUT ME SECTION */
 #about-me {
     flex: 1;
     flex-direction: column;
@@ -50,52 +74,122 @@ h3, p {
     margin-right: 50px;
 }
 
-div#about-me > p {
+div#about-me>p {
     display: flex;
     text-align: justify;
-    margin-bottom: 8.5%;
+    margin-bottom: 8.3%;
 }
 
+/* SKILLS SECTION */
 .lang-icons {
     display: flex;
     justify-content: center;
     gap: 100px;
 }
 
-
+/* PROJECT SECTION */
+.project-intro {
+    margin-bottom: 3rem;
+}
 
 .button-center {
     display: flex;
     justify-content: center;
 }
 
+/* CONTACT ME SECTION */
+#contact-me {
+    font-size: 20px;
+    text-shadow: 2px 2px #000;
+    color: #fff;
+}
+
+/* FOOTER SECTION */
+#footer a {
+    border-style: none;
+}
+
 
 @media (max-width: 1399px) {
-    div#about-me > p {
-        margin-bottom: 7.3%;
+    /* light and dark mode button */
+    .switch {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    /* navbar right side link button */
+    .nav-item {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-item:hover {
+        display: inline;
+        background-color: rgb(13, 118, 255);
+        justify-content: center;
+        border-radius: 10rem;
+    }
+
+    /* about me summary */
+    div#about-me>p {
+        margin-bottom: 7%;
+    }
+}
+
+@media (max-width: 1399px) {
+    /* light and dark mode button */
+    .switch {
+        margin-top: 0;
     }
 }
 
 @media (max-width: 1199px) {
-    div#about-me > p {
-        margin-bottom: 8.5%;
+    /* about me summary */
+    div#about-me>p {
+        margin-bottom: 8.3%;
     }
 }
 
 
-
 @media (max-width: 992px) {
-     .project-intro p {
-        text-align: justify;
+    /* about me summary */
+    div#about-me>p {
+        display: block;
+        margin-bottom: 0;
     }
 
+    /* language icons from skills section */
     .lang-icons {
         display: inline;
     }
 
-    div#about-me > p {
-        display: block;
-        margin-bottom: 0;
+    /* project brief description */
+    .project-intro p {
+        text-align: justify;
+    }
+
+    /* Just an info section*/
+    .contact-info {
+        text-align: justify;
     }
 }
 
+@media (max-width: 452px) {
+    /* from title section */
+    .title {
+        margin: 1rem;
+    }
+
+    /* from about me section */
+    .avatar {
+        width: 200px;
+        float: none;
+        margin: 0 auto 5% auto;
+    }
+
+    /* language icons from skills section */
+    .lang-icons div img {
+        height: 75px;
+    }
+}
